@@ -29,13 +29,21 @@
 # Answer the questions below with SQL Query
 
 1. WRITE a sql query to show all Item_Identifier
+
 2. WRITE a sql query to show count of total Item_Identifier
+
 3. WRITE a sql query to show maximum Item Weight
+
 4. WRITE a query to show minimun Item Weight
+
 5. WRITE a query to show average Item_Weight
+
 6. WRITE a query to show count OF Item_Fat_Content WHERE Item_Fat_Content IS Low Fat
+
 7. WRITE a query to show count OF Item_Fat_Content WHERE Item_Fat_Content IS Regular
+
 8. WRITE a query TO show maximum Item_MRP
+
 9. WRITE a query TO show minimum Item_MRP
 
 10.WRITE a query to show Item_Identifier , Item_Fat_Content ,Item_Type,Item_MRP and Item_MRP IS greater than 200
