@@ -1,0 +1,178 @@
+#1
+select Item_identifier from sql_project;
+
+#2
+select Count(Item_identifier) from sql_project;
+
+#3
+select distinct Item_identifier,max(Item_Weight) from sql_project where Item_weight=(select max(Item_Weight) from sql_project);
+
+#4
+select distinct Item_identifier,min(Item_Weight) from sql_project where Item_weight=(select min(Item_Weight) from sql_project);
+
+#5
+select avg(Item_Weight) from sql_project;
+
+#6
+select count(Item_Fat_Content) from sql_project where Item_Fat_Content='Low Fat';
+
+#7
+select count(Item_Fat_Content) from sql_project where Item_Fat_Content='Regular';
+
+#8
+select distinct Item_identifier,max(Item_MRP) from sql_project where Item_MRP=(select max(Item_MRP) from sql_project);
+
+#9
+select distinct Item_identifier,min(Item_MRP) from sql_project where Item_MRP=(select min(Item_MRP) from sql_project);
+
+#10
+select Item_Identifier , Item_Fat_Content ,Item_Type,Item_MRP from sql_project where Item_MRP>200;
+
+#11
+select Max(item_MRP) from sql_project where Item_Fat_Content='Low Fat';
+
+#12
+select Min(item_MRP) from sql_project where Item_Fat_Content='Low Fat';
+
+#13
+select * from sql_project where item_MRP between 50 and 100;
+
+#14
+select distinct Item_Fat_Content from sql_project;
+
+#15
+select distinct Item_Type from sql_project;
+
+#16
+select * from sql_project order by item_MRP desc;
+
+#17
+select * from sql_project order by Item_Outlet_Sales asc;
+
+#18
+select * from sql_project order by Item_Type asc;
+
+#19
+select * from sql_project where Item_type in ('Dairy', 'Meat');
+
+#20
+select distinct Outlet_size from sql_project;
+
+#21
+select distinct Outlet_Location_Type from sql_project;
+
+#22
+select distinct Outlet_Type from sql_project;
+
+#23
+select Item_Type , count(Item_Identifier) No_Of_Item FROM sql_project group by Item_Type order by No_Of_Item DESC;
+
+#24
+select Outlet_Size , count(Item_Identifier) No_Of_Item FROM sql_project group by Outlet_Size order by No_Of_Item DESC;
+
+#25
+select Outlet_Establishment_Year, count(Item_Identifier) No_Of_Item FROM sql_project group by Outlet_Establishment_Year ORDER BY No_Of_Item DESC;
+
+#26
+select Outlet_Type, count(Item_Identifier) No_Of_Item FROM sql_project group by Outlet_Type order by No_Of_Item DESC;
+
+#27
+select Outlet_Location_Type, count(Item_Identifier) No_Of_Item FROM sql_project group by Outlet_Location_Type order by No_Of_Item DESC;
+
+#28
+select item_type,max(item_MRP) from sql_project group by item_type;
+
+#29
+select item_type,min(item_MRP) from sql_project group by item_type;
+
+#30
+select Outlet_Establishment_Year,min(Item_MRP) from sql_project group by Outlet_Establishment_Year order by Item_MRP desc;
+
+#31
+select Outlet_Establishment_Year,max(Item_MRP) from sql_project group by Outlet_Establishment_Year order by Item_MRP desc;
+
+#32
+select Outlet_Establishment_Year,avg(Item_MRP) from sql_project group by Outlet_Establishment_Year order by Item_MRP desc;
+
+#33
+select Outlet_Size,avg(Item_MRP) from sql_project group by Outlet_Size order by Avg(item_MRP) desc;
+
+#34
+select Outlet_Type,avg(Item_MRP) from sql_project group by Outlet_Type order by Avg(item_MRP) asc;
+
+#35
+select Outlet_Type,max(Item_MRP) from sql_project group by Outlet_Type order by max(item_MRP) asc;
+
+#36
+select Item_type,max(Item_weight) from sql_project group by Item_type order by max(Item_Weight) desc;
+
+#37
+select Outlet_Establishment_Year , max(Item_Weight)max_weight  
+FROM sql_project GROUP BY Outlet_Establishment_Year order by max_weight asc;
+
+#38
+select Outlet_Type , min(Item_Weight)min_weight  
+FROM sql_project group by Outlet_Type order by min_weight desc; 
+
+#39
+select Outlet_Location_Type , avg(Item_Weight)Average_weight  
+FROM sql_project group by Outlet_Location_Type ORDER BY Average_weight desc;
+
+#40 
+select  Item_Type, Max(Item_Outlet_Sales)Max_sales FROM Big_mart group by Item_Type; 
+
+#41 
+select Item_Type, min(Item_Outlet_Sales)Min_sales from sql_project group by Item_Type;
+
+#42 
+select  Outlet_Establishment_Year, min(Item_Outlet_Sales)Min_sales from sql_project group by Outlet_Establishment_Year order by Min_sales desc;
+
+#43 
+select  Outlet_Establishment_Year,  Max(Item_Outlet_Sales)Max_sales FROM sql_project group by Outlet_Establishment_Year order by Max_sales desc;
+
+#44 
+select  Outlet_Size, avg(Item_Outlet_Sales)Average_sales from sql_project GROUP BY Outlet_Size order by Average_sales desc;
+
+#45
+select  Outlet_Size, avg(Item_Outlet_Sales)Average_sales  
+FROM sql_project  
+GROUP BY Outlet_Size order by Average_sales desc;
+
+#46 
+select Outlet_Type, avg(Item_Outlet_Sales)Average_sales FROM sql_project GROUP BY Outlet_Type order by Average_sales asc;
+
+#47 
+select Outlet_Type, max(Item_Outlet_Sales)Max_sales FROM sql_projec GROUP BY Outlet_Type order by Max_sales asc;
+
+#48 
+select Outlet_Establishment_Year, sum(Item_Outlet_Sales)total_sales from sql_project group by Outlet_Establishment_Year 
+order by total_sales desc;
+
+#49 
+
+select Item_Type, sum(Item_Outlet_Sales)total_sales from sql_project group by Item_Type 
+order by total_sales desc;
+
+#50 
+select Outlet_Location_Type, sum(Item_Outlet_Sales)total_sales
+from sql_project group by Outlet_Location_Type  order by total_sales desc;
+
+#51 
+select Item_Fat_Content, sum(Item_Outlet_Sales)total_sales
+from sql_project group by Item_Fat_Content 
+order by total_sales desc;
+
+#52 
+select Item_Type, Max(Item_Visibility)max_visibility from sql_project
+group by Item_Type order by max_visibility desc; 
+
+#53 
+select Item_Type, Min(Item_Visibility)min_visibility from sql_project group by Item_Type order by min_visibility desc; 
+
+#54 
+select Item_Type, sum(Item_Outlet_Sales)Total_sales from sql_project where Outlet_Location_Type = 'Tier 1'group by Item_Type order by Total_sales desc; 
+
+#55
+
+select Item_Type, sum(Item_Outlet_Sales)Total_sales from sql_project where Item_Fat_Content in ('Low Fat', 'LF') group by Item_Type order by Total_sales desc;
+
